@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="webstore">
+
+<head>
+
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Angular App</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body ng-controller="ProductCtrl">
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/" id="navbar">Filmcat</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/">Grid</a></li>
+          <li><a href="#/list">List</a></li>
+        </ul>
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+  <div class="container">
+    <ng-view></ng-view>
+    <hr>
+  </div>
+  <!--/.container-->
+
+
+  <!-- Angular.js core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="bower_components/angular/angular.js"></script>
+  <!--Angular.js Route-->
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!--Angular.js Resource-->
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="http://vjs.zencdn.net/4.0.4/video.js"></script>
+
+  <script src="js/controllers.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/resource.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="productDetail/productCtrl.js"></script>
+
+</body>
+
+</html>
