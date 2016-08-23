@@ -1,24 +1,43 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-4">
-    <div class="film-images">
-      <img ng-src="{{product.image}}" class="preview-img2 text-center">
+    <div class="col-xs-12 col-sm-4">
+        <div class="film-images">
+            <img ng-src="{{product.prod.image}}" class="preview-img2 text-center">
+        </div>
     </div>
-    <ul class="film-thumbs list-unstyled">
-      <li ng-repeat="img in film.images">
-        <img ng-src="{{img}}" ng-click="setImage(img)">
-      </li>
-    </ul>
-  </div>
-  <div class="col-xs-12 col-sm-8">
-    <h1>{{product.title}}</h1>
-    <p>{{product.text}}</p>
-    <hr>
-  </div>
+    <div class="col-xs-12 col-sm-8">
+        <h1>{{product.prod.title}}</h1>
+        <p>{{product.prod.text}}</p>
+        <p>
+            {{product.prod._id}}
+        </p>
+        <hr>
+    </div>
 </div>
 <div class="row">
-  <div class="col-md-3" ng-repeat="films in byGenre | limitTo: 4">
-    <a class="btn btn-default" href="#/films/{{films.id}}" role="button">
-      <h5>{{films.nameRU}}</h5>
-      <img ng-src="http://www.kinopoisk.ru/images/film_big/{{films.id}}.jpg" class="preview-img2 text-center"></a>
-  </div>
+    <div class="col-xs-12 col-sm-4">
+        <form name="comment" action="http://192.168.0.187:3000/comments/new/" method="post">
+            <p>
+                <label>Имя:</label>
+                <input name="username"></input>
+
+            </p>
+            <p>
+                <label>Комментарий:</label>
+                <br />
+                <textarea name="text" cols="150" rows="10"></textarea>
+            </p>
+            <p>
+                <input type="hidden" name="prod" value="{{product.prod._id}}" />
+                <input type="submit" value="Отправить" />
+            </p>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <ul>
+        <li ng-repeat="comment in product.comm"> 
+            <h3> {{comment.name}} </h3>
+            <p> {{comment.text}} </p>
+        </li>
+    </ul>
 </div>

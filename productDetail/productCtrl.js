@@ -8,6 +8,7 @@ webstore.controller('ProductDetailCtrl', [
       productId: $routeParams.productId
     }, function(data) {
       $scope.product = data;
+      $scope.actionPost = "http://192.168.0.187:3000/comments/new/"+data._id
     });
   }
 ]);
